@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Moja Walentynka</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 100px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        #btnYes {
+            background-color: green;
+            color: white;
+        }
+        #btnNo {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<img src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif">
+<h2>Czy będziesz moją Walentynką?</h2>
+<button id="btnYes" class="btn" onclick="accept()">Tak</button>
+<button id="btnNo" class="btn" onclick="decline()">Nie</button>
+<div id="message"></div>
+
+
+<script> 
+function accept() {
+	document.body.innerHTML = '<img src= "https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" alt="OK słodziaku">'
+	
+	}
+
+let yesBtnSize = 16;
+let responses = ["Naprawdę?" , "Jesteś pewna?" , "Zastanów się dobrze" , "Na pewno?" , "Ostatnia szansa..." , "Łamiesz nie serce" , "Będę smutny :(" , "Będę bardzo smutny :(" , "Będę bardzo bardzo smutny" , "Błagam" , "Błagam na kolanach"]
+let responseIndex = 0;
+function decline() {
+    const btnYES = document.getElementById('btnNo');
+    yesBtnSize+= 6;
+    btnYes.style.fontSize = `${yesBtnSize}px`;
+    btnYes.style.padding = `${20 + yesBtnSize/6}px ${30 + yesBtnSize/6}px`;
+	btnNo.textContent = responses[responseIndex];
+	responseIndex = (responseIndex + 1) % responses.length;
+}
+</script>
+
+</body>
+</html>
